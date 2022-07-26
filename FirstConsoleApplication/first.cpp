@@ -11,6 +11,7 @@ int main() {
 	int testa = test();
 	cout << testa << endl;
 	swap(10, 20);
+	testPoint();
 	return 0;
 }
 
