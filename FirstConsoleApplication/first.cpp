@@ -12,6 +12,7 @@ int main() {
 	cout << testa << endl;
 	swap(10, 20);
 	testPoint();
+	testPointArray();
 	return 0;
 }
 
