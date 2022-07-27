@@ -8,11 +8,9 @@ int test();
 
 int main() {
 	cout << "zhangping is good" << endl;
-	int testa = test();
-	cout << testa << endl;
-	swap(10, 20);
-	testPoint();
-	testPointArray();
+	int a = 2;
+	int b = 3;
+	testFunPoint(&a, &b);
 	return 0;
 }
 

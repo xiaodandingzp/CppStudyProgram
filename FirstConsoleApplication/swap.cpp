@@ -37,3 +37,16 @@ void testPointArray() {
 		p2++;
 	}
 }
+
+//指针与函数  指针传递 地址传递.外部的a,b的值会被改变
+void testFunPoint(int *a, int *b){
+	cout << "a:" << *a << endl;
+	cout << "b:" << *b << endl;
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+	cout << "a:" << *a << endl;
+	cout << "b:" << *b << endl;
+}
+
+
