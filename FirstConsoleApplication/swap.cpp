@@ -50,3 +50,22 @@ void testFunPoint(int *a, int *b){
 }
 
 
+//ц╟ещеепР
+void bubbleSort(int* arr, int len) {
+	for (int i = 0; i < len - 1; i++) {
+		for (int j = 0; j < len - i - 1; j++) {
+			if (arr[j] > arr[j + 1]) {
+				int temp = arr[j + 1];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
+
+void printArry(int* arr, int len) {
+	for (int i = 0; i < len; i++) {
+		cout << "i" << i << "is:" << arr[i] << endl;
+	}
+}
+
