@@ -56,8 +56,8 @@ void bubbleSort(int* arr, int len) {
 		for (int j = 0; j < len - i - 1; j++) {
 			if (arr[j] > arr[j + 1]) {
 				int temp = arr[j + 1];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
+				arr[j + 1] = arr[j];
+				arr[j] = temp;
 			}
 		}
 	}
@@ -69,3 +69,33 @@ void printArry(int* arr, int len) {
 	}
 }
 
+//引用 引用必须初始化 初始化后就不能修改
+void testCite() {
+	int a = 100;
+	cout << "a:" << a << endl;
+	int& b = a;
+	b = 200;
+	cout << "b:" << b << endl;
+	cout << "a:" << a << endl;
+}
+
+// 引用传递  形参修饰实参 a,b改变时，外部的a,b的值也会改变
+void swap2(int &a, int &b) {
+	int temp = a;
+	a = b;
+	b = temp;
+}
+//指针作为函数的返回值 
+int * test1() {
+	int a = 10;
+	return &a;
+}
+//int *b = test1() //不可以，因为a在函数执行结束时被销毁了
+
+//引用作为函数的返回值
+int& returnCite() {
+	int a = 10;
+	return a;
+}
+//int &b = returnCite()  //不可以，因为a在函数执行结束时被销毁了，b指向的内存的值不在了
+// returnCite() = 100    //可以，a指向的内存被重新赋值为100

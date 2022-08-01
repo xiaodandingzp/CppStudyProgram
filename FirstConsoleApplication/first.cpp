@@ -8,10 +8,9 @@ int test();
 
 int main() {
 	cout << "zhangping is good" << endl;
-	int arr[5] = { 4,3,5,2,1 };
-	printArry(arr, 5);
-	bubbleSort(arr, 5);
-	printArry(arr, 5);
+	int *a = test1();
+	cout << "a:" << a << endl;
+	cout << "a:" << a << endl;
 	return 0;
 }
 

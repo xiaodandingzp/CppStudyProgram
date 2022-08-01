@@ -34,7 +34,6 @@
 *.vsidx
 *.tlog
 debug
-FirstApplication.sln
 *.user
 *.filters
 *.vcxproj
