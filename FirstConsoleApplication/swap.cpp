@@ -1,4 +1,5 @@
 #include "swap.h"
+using namespace std;
 
 //函数的定义
 void swap(int a, int b) {
@@ -99,3 +100,8 @@ int& returnCite() {
 }
 //int &b = returnCite()  //不可以，因为a在函数执行结束时被销毁了，b指向的内存的值不在了
 // returnCite() = 100    //可以，a指向的内存被重新赋值为100
+
+//常量引用 主要用来修饰形参，防止改变实参的值
+void testConstCite(const int &a) {
+	cout << "a:" << a << endl;
+}
