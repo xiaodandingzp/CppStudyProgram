@@ -105,3 +105,25 @@ int& returnCite() {
 void testConstCite(const int &a) {
 	cout << "a:" << a << endl;
 }
+
+
+//函数的默认参数  声明和实现只能一处有默认参数，防止声明和实现的参数默认值不一样
+void add1(int a, int b, int c) {
+	int result = a + b + c;
+	cout << "result:" << result << endl;
+}
+
+//函数的占位参数 占位参数用来占位 在调用时必须填补该位置, 占位参数也可以设置默认值
+void funPar(int a, int, int) {
+	cout << "this is funPar" << endl;
+}
+
+//函数重载的注意事项
+//引用作为重载条件
+void funOverCite(int& a) {
+	cout << "funOverCite(int& a)" << endl;
+}
+
+void funOverCite(const int& a) {
+	cout << "funOverCite(const int& a)" << endl;
+}

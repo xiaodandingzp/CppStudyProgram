@@ -7,10 +7,7 @@ using namespace std;
 int test();
 
 int main() {
-	cout << "zhangping is good" << endl;
-	int *a = test1();
-	cout << "a:" << a << endl;
-	cout << "a:" << a << endl;
+	funOverCite(10);
 	return 0;
 }
 
