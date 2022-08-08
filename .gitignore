@@ -34,9 +34,6 @@
 *.vsidx
 *.tlog
 debug
-*.user
-*.filters
-*.vcxproj
 
 /.vs
 /.idea
