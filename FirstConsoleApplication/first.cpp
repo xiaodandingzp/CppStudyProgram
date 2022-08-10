@@ -2,32 +2,11 @@
 using namespace std;
 #include "swap.h"
 #include <string>
+#include "Person.h"
 
 //函数声明
 //函数可以声明多次
 int test();
-class Person {
-public:
-	string name;
-
-	Person() {
-		cout << "无参构造函数" << endl;
-	}
-
-	Person(string name) {
-		this->name = name;
-		cout << "有参构造函数" << endl;
-	}
-
-	Person(const Person & p) {
-		name = p.name;
-		cout << "拷贝构造函数" << endl;
-	}
-
-	~Person() {
-		cout << "析构函数" << endl;
-	}
-};
 
 
 int main() {
