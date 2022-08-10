@@ -23,3 +23,11 @@ Person::Person(const Person & p) {
 Person::~Person() {
 	cout << "Îö¹¹º¯Êý" << endl;
 }
+
+void Person::setAge(int a) {
+	this->age = a;
+}
+
+int Person::getAge() {
+	return this->age;
+}
