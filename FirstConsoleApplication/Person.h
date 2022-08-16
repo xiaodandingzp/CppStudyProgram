@@ -20,7 +20,7 @@ public:
 
 	Person();
 
-	Person(string name);
+	Person(string name, int height);
 
 	Person(const Person& p);
 
@@ -32,6 +32,7 @@ public:
 
 private:
 	int age;
+	int* height;
 };
 
 #endif
