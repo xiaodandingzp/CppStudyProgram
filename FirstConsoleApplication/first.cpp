@@ -8,8 +8,26 @@ using namespace std;
 //函数可以声明多次
 int test();
 
+class MyClass
+{
+public:
+	int m_a;
+	int m_b;
+	int m_c;
+
+	MyClass(int a, int b, int c) :m_a(a), m_b(b), m_c(c) {
+
+	}
+};
+
 
 int main() {
+
+	MyClass myClass = MyClass(10, 20, 30);
+	cout << "m_a" << myClass.m_a << endl;
+	cout << "m_b" << myClass.m_b << endl;
+	cout << "m_c" << myClass.m_c << endl;
+
 	Person pp = Person("zhangping", 180);
 	cout << "name:" << pp.name << endl;
 
