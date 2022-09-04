@@ -7,6 +7,7 @@ using namespace std;
 //函数声明
 //函数可以声明多次
 int test();
+int getAgeGloble(Person* person);
 
 
 int main() {
@@ -23,7 +24,7 @@ int main() {
 	p5.setAge(30);
 	cout << "p5的年龄" << p5.getAge() << endl;
 	Person("zhangping"); //匿名对象 特点：当前行执行结束后，系统会立即回收掉匿名对象
-
+	getAgeGloble(&p3);
 	Person p7 = string("zhangping"); //相当于Person p7 = Person("zhangping")
 	return 0;
 }

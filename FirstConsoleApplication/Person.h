@@ -12,7 +12,9 @@
 
 #include<iostream>
 using namespace std;
+
 class Person {
+	friend int getAgeGloble(Person* person);
 public:
 	string name;
 

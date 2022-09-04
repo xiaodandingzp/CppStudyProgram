@@ -31,3 +31,7 @@ void Person::setAge(int a) {
 int Person::getAge() {
 	return this->age;
 }
+
+int getAgeGloble(Person * person) {
+	return person->age;
+}
