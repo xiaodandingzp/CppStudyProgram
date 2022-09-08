@@ -13,8 +13,21 @@
 #include<iostream>
 using namespace std;
 
+class GoodFriend {
+public:
+	int getOtherPersonAge();
+};
+
+class GoodFriend1 {
+public:
+	int getOtherPersonAge11();
+};
+
 class Person {
 	friend int getAgeGloble(Person* person);
+	friend class GoodFriend;
+	friend int GoodFriend1::getOtherPersonAge11();
+
 public:
 	string name;
 

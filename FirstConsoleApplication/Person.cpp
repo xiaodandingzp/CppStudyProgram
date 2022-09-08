@@ -45,3 +45,17 @@ int Person::getAge() {
 int getAgeGloble(Person * person) {
 	return person->age;
 }
+
+//类做友元
+int GoodFriend::getOtherPersonAge() {
+	Person person = Person("zp", 160);
+	person.setAge(18);
+	return person.age;
+}
+
+//成员函数做友元
+int GoodFriend1::getOtherPersonAge11() {
+	Person person = Person("zp", 160);
+	person.setAge(18);
+	return person.age;
+}
