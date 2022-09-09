@@ -36,6 +36,7 @@ Person::~Person() {
 }
 
 //运算符重载 运算符重载也可以发生函数重载
+//对于内置的数据类型的表达式的运算符是不能改变的
 Person Person::operator+ (Person& p1) {
 	Person temp = Person("zppp", 180);
 	temp.setAge(p1.age + this->age);
