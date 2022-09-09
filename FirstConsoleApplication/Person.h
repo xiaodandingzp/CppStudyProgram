@@ -39,6 +39,8 @@ public:
 
 	Person(const Person& p);
 
+	Person operator+ (Person& p1);
+
 	void setAge(int a);
 
 	int getAge();

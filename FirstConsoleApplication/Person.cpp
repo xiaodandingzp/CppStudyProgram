@@ -22,6 +22,7 @@ Person::Person(string name, int height) {
 Person::Person(const Person & p) {
 	name = p.name;
 	height = new int(*(p.height));//深拷贝，在堆区开辟新的内存空间
+	age = p.age;
 	cout << "拷贝构造函数" << endl;
 }
 
@@ -32,6 +33,13 @@ Person::~Person() {
 		delete height;
 		height = NULL;
 	}
+}
+
+//运算符重载 运算符重载也可以发生函数重载
+Person Person::operator+ (Person& p1) {
+	Person temp = Person("zppp", 180);
+	temp.setAge(p1.age + this->age);
+	return temp;
 }
 
 void Person::setAge(int a) {

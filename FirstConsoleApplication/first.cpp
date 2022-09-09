@@ -34,14 +34,18 @@ int main() {
 
 	Person p1;
 	Person p2("zhangping", 180); 
+	p2.setAge(10);
 	Person p3(p2);
 
 	Person p4;
 	Person p5 = Person("zhangping", 180);
 	Person p6 = Person(p5);
+	p5.setAge(20);
 	p5.setAge(30);
 	cout << "p5的年龄" << p5.getAge() << endl;
 	getAgeGloble(&p3);
+	Person p7 = p2 + p5;
+	cout << "p7的年龄" << p7.getAge() << endl;
 	return 0;
 }
 
