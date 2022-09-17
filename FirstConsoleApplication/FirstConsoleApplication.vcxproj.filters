@@ -27,12 +27,18 @@
     <ClCompile Include="Person.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MyInteger.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="swap.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Person.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyInteger.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
