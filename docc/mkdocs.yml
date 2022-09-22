@@ -3,6 +3,7 @@ repo_name: CppStudyProgram
 nav:
   - "基础1": jichu1.md
   - "基础2": jichu2.md
+  - "问题": question.md
 
 
 theme:
