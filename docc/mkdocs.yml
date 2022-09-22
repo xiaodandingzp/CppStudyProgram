@@ -1,0 +1,19 @@
+site_name: CppStudyProgram
+repo_name: CppStudyProgram
+nav:
+  - "基础1": jichu1.md
+  - "基础2": jichu2.md
+
+
+theme:
+  name: 'material'
+  palette:
+    primary: 'light blue'
+    accent: 'white'
+
+markdown_extensions:
+  - smarty
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - meta
