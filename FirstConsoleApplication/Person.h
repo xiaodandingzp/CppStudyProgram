@@ -52,4 +52,10 @@ private:
 	int* height;
 };
 
+class Boy : public Person {
+public:
+	int sex = 0;
+	int GetSxe();
+};
+
 #endif

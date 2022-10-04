@@ -14,19 +14,31 @@ class MyClass
 {
 public:
 	int m_a;
+protected:
 	int m_b;
+private:
 	int m_c;
 
-	MyClass(int a, int b, int c) :m_a(a), m_b(b), m_c(c) {
+};
 
+
+//MyClassA的size为16 
+// 父类中私有成员属性是被编译器给隐藏了，因此访问不到，但确实被继承下去了
+class MyClassA : public MyClass {
+public:
+	int m_d;
+
+	string test() {
+		m_a = 1;
+		m_b = 2;
+		//m_c  不可以访问私有属性
+		m_d = 4;
 	}
 };
 
 
 int main() {
-	MyInteger myinteger;
-	cout << myinteger++ << endl;
-	cout << ++(++myinteger) << endl;
+	cout << "size of MyClassA " << sizeof(MyClassA) << endl;
 	return 0;
 }
 

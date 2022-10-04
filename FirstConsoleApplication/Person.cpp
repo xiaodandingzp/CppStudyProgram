@@ -68,3 +68,7 @@ int GoodFriend1::getOtherPersonAge11() {
 	person.setAge(18);
 	return person.age;
 }
+
+int Boy::GetSxe() {
+	return this->sex;
+}
