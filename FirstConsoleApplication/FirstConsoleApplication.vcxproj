@@ -132,6 +132,7 @@
     <ClCompile Include="first.cpp" />
     <ClCompile Include="FirstConsoleApplication.cpp" />
     <ClCompile Include="swap.cpp" />
+    <ClCompile Include="菱形继承.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyInteger.h" />

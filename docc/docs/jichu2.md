@@ -184,3 +184,153 @@ const修饰成员函数
  //MyClassA的析构函数
  //MyClass的析构函数
 ```
+
+继承---同名成员处理
+--
+```C++
+//1，子类对象可以直接访问到子类中同名成员（属性和方法）
+//2，子类加作用域可以访问到父类的同名成员
+//格式：son.Base::test() 子类son访问父类Base的test()方法
+//3，当子类与父类拥有同名的的成员函数时，子类会隐藏父类中同名成员函数（包裹重载的函数），加作用域可以访问到父类中同名函数。
+//比如 父类中有test() test(int a),子类中有test().子类会隐藏父类的test()和test(int a),须加作用域才可以调用到父类的test(int a)
+son.Base::test(10)
+```
+继承---同名静态成员处理
+---
+```c++
+class MyClass
+{
+public:
+	int m_a;
+	static int m_static;
+
+	static void testStatic() {
+		cout << " MyClass.testStatic " << endl;
+	}
+
+	static void testStatic(int a) {
+		cout << " MyClass.testStatic(int a) " << endl;
+	}
+
+	MyClass() {
+		cout << " MyClass的构造函数 " << endl;
+	}
+
+	virtual ~MyClass() {
+		cout << " MyClass的析构函数 " << endl;
+	}
+protected:
+	int m_b;
+private:
+	int m_c;
+
+};
+
+
+//MyClassA的size为16 
+// 父类中私有成员属性是被编译器给隐藏了，因此访问不到，但确实被继承下去了
+class MyClassA : public MyClass {
+public:
+	int m_d;
+	MyClassA() {
+		cout << " MyClassA的构造函数 " << endl;
+	}
+
+	~MyClassA() {
+		cout << " MyClassA的析构函数 " << endl;
+	}
+
+	static void testStatic() {
+		cout << " MyClassA.testStatic " << endl;
+	}
+	string test() {
+		m_a = 1;
+		m_b = 2;
+		//m_c  不可以访问私有属性
+		m_d = 4;
+	}
+};
+
+
+int main() {
+	MyClassA test = MyClassA();
+	//通过对象访问
+	test.m_static;
+	test.testStatic();
+	test.MyClass::m_static;
+	test.MyClass::testStatic();
+	test.MyClass::testStatic(10);
+	//通过类去访问
+	MyClassA::m_static;
+	MyClassA::testStatic();
+	MyClassA::MyClass::m_static;
+	MyClassA::MyClass::testStatic();
+	MyClassA::MyClass::testStatic(10);
+	return 0;
+}
+```
+继承---多继承
+--
+```c++
+c++允许一个类继承多个类
+语法：class 子类 : 继承方式 父类1, 继承方式 父类2
+多继承可能会引发父类中有同名成员出现，需要加作用域区分。
+```
+
+继承---菱形继承
+---
+```C++
+定义：
+	两个派生类继承同一个基类
+	又有某个类同时继承这两个派生类
+	这种继承被称为零星继承，或者钻石继承
+菱形继承的问题
+	羊和驼继承动物 羊驼继承羊和驼
+	羊继承了动物的数据，驼也继承了动物的数据，当羊驼使用数据时，就会产生二义性
+	羊驼继承自动物的数据继承了两次，其实我们清除，这份数据我们只需要一份就可以
+
+#include<iostream>
+using namespace std;
+#include "swap.h"
+#include <string>
+#include "Person.h"
+#include "MyInteger.h"
+
+class Animal {
+public:
+	int m_age;
+};
+
+//利用虚继承解决菱形继承的问题
+//继承之前加上关键字 virtual 变为虚继承
+//Animal为虚基类
+
+class Sheep : virtual public Animal
+{
+};
+
+class Tuo : virtual public Animal
+{
+};
+
+class SheepTuo : public Sheep , public Tuo
+{
+};
+
+void testSheepTuo() {
+	SheepTuo st;
+	st.Sheep::m_age = 18;
+	st.Tuo::m_age = 20;
+	// 当菱形继承时需要加作用域区分
+	cout << "st.Sheep::m_age" << st.Sheep::m_age << endl;
+	cout << "st.Tuo::m_age" << st.Tuo::m_age << endl;
+	//改为虚继承后 可以不区分作用域 因为只有一份数据了
+	cout << "st.m_age" << st.Tuo::m_age << endl;
+}
+
+int main() {
+	cout << "菱形继承" << endl;
+	testSheepTuo();
+	return 0;
+}
+```
