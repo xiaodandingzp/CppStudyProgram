@@ -14,6 +14,13 @@ class MyClass
 {
 public:
 	int m_a;
+	MyClass() {
+		cout << " MyClass的构造函数 " << endl;
+	}
+
+	virtual ~MyClass() {
+		cout << " MyClass的析构函数 " << endl;
+	}
 protected:
 	int m_b;
 private:
@@ -27,7 +34,13 @@ private:
 class MyClassA : public MyClass {
 public:
 	int m_d;
+	MyClassA() {
+		cout << " MyClassA的构造函数 " << endl;
+	}
 
+	~MyClassA() {
+		cout << " MyClassA的析构函数 " << endl;
+	}
 	string test() {
 		m_a = 1;
 		m_b = 2;
@@ -38,7 +51,7 @@ public:
 
 
 int main() {
-	cout << "size of MyClassA " << sizeof(MyClassA) << endl;
+	MyClassA test = MyClassA();
 	return 0;
 }
 

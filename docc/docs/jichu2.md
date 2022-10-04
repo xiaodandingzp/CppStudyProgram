@@ -174,3 +174,13 @@ const修饰成员函数
 //查看继承模型
 // dl reportSingleClassLayout "xxx.cpp"
 ```
+
+继承--构造和析构函数的顺序
+--
+```c++
+// MyClassA 继承 MyClass，构造函数和析构函数调用顺序：
+ //MyClass的构造函数
+ //MyClassA的构造函数
+ //MyClassA的析构函数
+ //MyClass的析构函数
+```
